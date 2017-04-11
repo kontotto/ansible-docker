@@ -1,0 +1,12 @@
+---
+
+- name: check if {{ docker_user }} exist
+  become: yes
+  getent: database=passwd key="{{ docker_user }}"
+  register: docker_user_result
+  ignore_errors: yes
+
+- name: add {{ docker_user }} to docker group
+  become: yes
+  user: name={{ docker_user }} groups=docker append=yes
+  when: docker_user_result|success

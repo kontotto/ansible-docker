@@ -1,0 +1,13 @@
+---
+
+- name: install docker-ce
+  become: yes
+  apt: pkg=docker-ce state=present update_cache=yes
+
+- name: start docker
+  become: yes
+  service: name=docker state=started enabled=yes
+
+- name: add docker group
+  become: yes
+  group: name=docker
