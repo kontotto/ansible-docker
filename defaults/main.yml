@@ -5,3 +5,6 @@ install_docker_compose: true
 
 docker_compose_path: /usr/local/bin/docker-compose
 docker_compose_version: 1.11.2
+
+pip_version_docker_py: latest
+

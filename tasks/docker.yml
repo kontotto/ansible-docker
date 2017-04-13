@@ -18,4 +18,7 @@
 
 - name: install docker-py
   become: yes
-  pip: name=docker-py state=present
+  pip: 
+    name=docker-py
+    state=present
+    version="{{ pip_install_docker_py }}"
