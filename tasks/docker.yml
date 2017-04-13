@@ -2,7 +2,7 @@
 
 - name: install docker-ce
   become: yes
-  apt: pkg=docker-ce state=present update_cache=yes
+  apt: name=docker-ce state=present update_cache=yes
 
 - name: start docker
   become: yes
@@ -13,8 +13,9 @@
   group: name=docker
 
 - name: install python-pip
-  apt: pkg=python-pip state=present
+  become: yes
+  apt: name=python-pip state=present
 
 - name: install docker-py
   become: yes
-  apt: pkg=docker-py state=present
+  pip: name=docker-py state=present
