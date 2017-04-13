@@ -12,6 +12,9 @@
   become: yes
   group: name=docker
 
+- name: install python-pip
+  apt: pkg=python-pip state=present
+
 - name: install docker-py
   become: yes
   apt: pkg=docker-py state=present
