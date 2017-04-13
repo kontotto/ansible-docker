@@ -21,4 +21,4 @@
   pip: 
     name=docker-py
     state=present
-    version="{{ pip_install_docker_py }}"
+    version="{{ pip_version_docker_py }}"
